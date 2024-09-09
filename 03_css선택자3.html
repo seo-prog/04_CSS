@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #test1 :first-child{ /*test의 아래 있는 애들을 찾아야 하니까 띄어쓰기를 해줘야 한다.
+             띄어쓰기를 안하면 그냥 t첫 번째 test1을 찾게된다. */
+            color:red;
+        }
+        #test1 :last-child{
+            color:aqua;
+        }
+        #test1 :nth-child(2){
+            color:blue;
+        }
+        #test2 :last-of-type{
+            color:brown;
+        }
+        #test2 :nth-last-of-type(3){
+            color:blueviolet;
+        }
+        #test3:hover:before{/*hover -> 마우스를 올렸을 때*/
+            content: "좋은 아침입니다.";
+            color: red;
+        }
+        #test3:hover{/*after, before 은 앞에 텍스트가 앞에붙냐 뒤에붙냐의 차이*/
+            color: blue;
+        }
+        #test3::after{
+            content:"최서연입니다."
+        }
+        #test3:active{
+            color:blueviolet;
+        }
+        
+    </style>
+</head>
+<body>
+    <h2>일반 구조 선택자</h2>
+    <p>특정한 위치에 있는 태그 선택(위치로 구분)</p>
+    <div id="test1">
+        <p>테스트1</p>
+        <p>테스트1</p>
+        <p>테스트1</p>
+        <p>테스트1</p>
+        <p>테스트1</p>
+        <p>테스트1</p>
+        <p>테스트1</p>
+    </div>
+    <hr>
+
+    <h2>형태 구조 선택자(태그별로 구분)</h2>
+    <p>특정한 위치에 있는 태그 선택(태그 별로 구분)</p>
+    <div id="test2">
+        <p>테스트2</p>
+        <p>테스트2</p>
+        <p>테스트2</p>
+        <p>테스트2</p>
+        <p>테스트2</p>
+        <p>테스트2</p>
+        <pre>테스트2</pre><!--lastoftype 으로 위에 스타일을 변경했으면, 각 타입의 마지막 요소의 색이 변경이 되므로 
+        p 마지막과 pre가 변경이된다. 만약 pre타입이 2개라면 pre 의 마지막 요소가 변경이 된다.-->
+    </div>
+
+
+    <hr>
+    <div id="test3">
+        안녕하세요
+    </div>
+    
+</body>
+</html>

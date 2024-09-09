@@ -1,0 +1,12 @@
+
+@font-face {
+    font-family: 'TetrisFont'; /* 폰트 이름 정의 */
+    src: url('font/tetrisfont.ttf') format('truetype'); /* TTF 파일 경로 */
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'TetrisFont', sans-serif; /* 폰트를 적용할 요소에 지정 */
+    font-size: 100px;
+}
